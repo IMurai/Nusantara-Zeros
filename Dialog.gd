@@ -26,12 +26,23 @@ func start_dialog(texts: Array, speaker_name: String = "NPC: "):
 	label = scene_root.find_child("IsiDialog", true, false)
 	start_symbol = scene_root.find_child("Start", true, false)
 	
+	if not label or not textbox_container:
+		push_error("Dialog: node tidak ditemukan di scene '%s'" % scene_root.name)
+		return
+	
 	_speaker_name = speaker_name
 	is_active = true
 	text_queue.clear()
 	for t in texts:
 		queue_text(t)
 	current_state = State.READY
+
+func _hide_on_scene_start():
+	var scene_root = get_tree().current_scene
+	textbox_container = scene_root.find_child("Textboxcontainer", true, false)
+	label = scene_root.find_child("IsiDialog", true, false)
+	start_symbol = scene_root.find_child("Start", true, false)
+	hide_textbox()
 
 func _process(_delta):
 	if !is_active:  # ← skip kalau dialog tidak aktif

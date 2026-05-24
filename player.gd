@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const KECEPATAN = 130
+const KECEPATAN = 300
 var state: State
 var states = {}
 var vel = Vector2.ZERO
