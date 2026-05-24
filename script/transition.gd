@@ -11,7 +11,7 @@ func _ready():
 
 func _on_animation_finished(anim_name):
 	if anim_name == "fade_to_black":
-		animation_player.play("fade_to_normal")
+		on_transition_finished.emit() 
 	elif anim_name == "fade_to_normal":
 		color_rect.visible = false
 
