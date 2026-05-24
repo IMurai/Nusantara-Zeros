@@ -24,7 +24,5 @@ func physics_update(_delta):
 
 	if jalan:
 		player.velocity = player.vel.normalized() * player.KECEPATAN
-	elif Input.is_action_pressed("tombol_serang"):
-		player.change_state("serang")
 	else:
 		player.change_state("idle")

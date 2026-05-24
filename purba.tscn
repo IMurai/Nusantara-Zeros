@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://v5rdhusbdhvg"]
+
+[ext_resource type="Script" uid="uid://s2660ncedmdi" path="res://purba.gd" id="1_jl51x"]
+[ext_resource type="Texture2D" uid="uid://cdojhvt6mrkxw" path="res://arts/characters/NPC/Purba/Purba.png" id="1_x8ths"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jl51x"]
+atlas = ExtResource("1_x8ths")
+region = Rect2(0, 0, 240, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcjb8"]
+atlas = ExtResource("1_x8ths")
+region = Rect2(240, 0, 240, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fs7d2"]
+atlas = ExtResource("1_x8ths")
+region = Rect2(480, 0, 240, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojhjd"]
+atlas = ExtResource("1_x8ths")
+region = Rect2(720, 0, 240, 240)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gjkp6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jl51x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lcjb8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fs7d2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojhjd")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1331378825]
+script = ExtResource("1_jl51x")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=284814255]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_gjkp6")
+animation = &"idle"
+frame_progress = 0.15878154

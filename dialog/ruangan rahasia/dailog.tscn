@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dj0re8lswi7hq"]
+
+[ext_resource type="FontFile" uid="uid://b1lvfkcxp0ybw" path="res://Font/BoldPixels.ttf" id="1_rcq7b"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vpg0p"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=528762974]
+
+[node name="Panel" type="Panel" parent="." unique_id=1880281961]
+offset_top = 281.0
+offset_right = 1069.0
+offset_bottom = 432.0
+
+[node name="Label" type="Label" parent="Panel" unique_id=1164999132]
+layout_mode = 0
+offset_right = 1069.0
+offset_bottom = 151.0
+theme_override_fonts/font = ExtResource("1_rcq7b")
+text = "Test
+"
+label_settings = SubResource("LabelSettings_vpg0p")
+vertical_alignment = 1

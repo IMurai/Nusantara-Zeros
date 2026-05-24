@@ -10,7 +10,6 @@ func _ready():
 	# load states
 	states["idle"] = load("res://states/IdleState.gd").new()
 	states["jalan"] = load("res://states/JalanState.gd").new()
-	states["serang"] = load("res://states/SerangState.gd").new()
 
 	# kasih referensi player ke setiap state
 	for s in states.values():
@@ -36,14 +35,4 @@ func _process(delta):
 func _physics_process(delta):
 	state.physics_update(delta)
 	move_and_slide()
-
-func _on_animated_sprite_2d_frame_changed() -> void:
-	var animated_sprite := $AnimatedSprite2D
-	var attack_box := $AttackBox
-
-	if animated_sprite.animation.begins_with("serang") and animated_sprite.frame == 1:
-		attack_box.monitoring = true
-		attack_box.set_deferred("disabled", false)
-	else:
-		attack_box.monitoring = false
-		attack_box.set_deferred("disabled", true)
+	

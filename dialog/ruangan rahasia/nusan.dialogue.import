@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dgk3bhjteke7j"
+path="res://.godot/imported/nusan.dialogue-ae96cd9654ee845104d7cb81f7d6b5f9.tres"
+
+[deps]
+
+source_file="res://dialog/ruangan rahasia/nusan.dialogue"
+dest_files=["res://.godot/imported/nusan.dialogue-ae96cd9654ee845104d7cb81f7d6b5f9.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,16 @@
+~ start
+Tara: Siapa kamu? dan kenapa aku berada disini?
+....: Namaku adalah Nusan. Apakahmu lihat prasasti ini? 
+Aku adalah orang yang sudah menjaga prasasti ini selama berjuta-juta tahun lamanya
+Nusan: Kamu bisa berada disini karena kamu adalah salah satu orang 
+yang terpilih untuk menyatukan kembali prasasti ini.
+Nusan: Sudah ratusan tahun tidak ada yang bisa menyentuhnya tanpa... reaksi. 
+Tapi hati-hati, beberapa orang yang menyentuhnya tidak sempat kembali..
+- First one
+	Nathan: You picked the first one.
+- Second one
+	Nathan: You picked the second one.
+- Start again => start
+- End the conversation => END
+Nathan: For more information see the online documentation.
+=> END
