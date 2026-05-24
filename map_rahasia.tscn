@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://me8x2rlky676" path="res://pak_nusan.gd" id="5_c57bo"]
 [ext_resource type="Texture2D" uid="uid://d2l27y54anqdh" path="res://arts/characters/player.png" id="5_h0ru7"]
 [ext_resource type="Script" uid="uid://dln56ox630o15" path="res://Dialog.gd" id="7_e0rsr"]
+[ext_resource type="FontFile" uid="uid://cccmj080pymaq" path="res://Font/Minecraft.ttf" id="8_3nvsn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nwyu4"]
 texture = ExtResource("1_48bhg")
@@ -1715,8 +1716,14 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3nvsn"]
+size = Vector2(10, 15)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_e0rsr"]
-radius = 8.062258
+radius = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3nvsn"]
+bg_color = Color(0, 0, 0, 0.92156863)
 
 [node name="mapRahasia" type="Node2D" unique_id=628464742]
 
@@ -1726,7 +1733,7 @@ offset_right = 496.0
 offset_bottom = 256.0
 color = Color(0, 0, 0, 1)
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=371213434]
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=371213434 groups=["player"]]
 tile_map_data = PackedByteArray("AAAPAAcAAAAMAAAAAAARAAMAAAAMAAAAAAAQAAMAAAAMAAAAAAAPAAMAAAAMAAAAAAAOAAMAAAAMAAAAAAANAAMAAAAMAAAAAAANAA0AAAAMAAAAAAANAAwAAAAMAAAAAAANAAsAAAAMAAAAAAANAAoAAAAMAAAAAAANAAkAAAAMAAAAAAANAAgAAAAMAAAAAAANAAcAAAAMAAAAAAANAAYAAAAMAAAAAAANAAUAAAAMAAAAAAANAAQAAAAMAAAAAAAOAAQAAAAMAAAAAAAOAAUAAAAMAAAAAAAOAAYAAAAMAAAAAAAOAAcAAAAMAAAAAAAOAAgAAAAMAAAAAAAOAAkAAAAMAAAAAAAOAAoAAAAMAAAAAAAOAAsAAAAMAAAAAAAOAAwAAAAMAAAAAAAOAA0AAAAMAAAAAAAPAA0AAAAMAAAAAAAPAAwAAAAMAAAAAAAPAAsAAAAMAAAAAAAPAAoAAAAMAAAAAAAPAAkAAAAMAAAAAAAPAAgAAAAMAAAAAAAQAAgAAAAMAAAAAAAQAAcAAAAMAAAAAAAQAAYAAAAMAAAAAAAQAAQAAAAMAAAAAAAPAAQAAAAMAAAAAAAPAAUAAAAMAAAAAAAPAAYAAAAMAAAAAAARAAQAAAAMAAAAAAARAAUAAAAMAAAAAAARAAYAAAAMAAAAAAARAAcAAAAMAAAAAAARAAgAAAAMAAAAAAARAAkAAAAMAAAAAAAQAAkAAAAMAAAAAAAQAAoAAAAMAAAAAAAQAAsAAAAMAAAAAAAQAAwAAAAMAAAAAAAQAA0AAAAMAAAAAAARAA0AAAAMAAAAAAARAAwAAAAMAAAAAAARAAsAAAAMAAAAAAARAAoAAAAMAAAAAAAOAAEAAAABABEAAAAOAAIAAAABABIAAAAPAAEAAAABABEAAAAPAAIAAAABABIAAAAQAAEAAAABABEAAAAQAAIAAAABABIAAAARAAEAAAABABEAAAARAAIAAAABABIAAAANAAEAAAABABEAAAANAAIAAAABABIAAAAMAAEAAAALAAEAAAAMAAIAAAALAAIAAAAMAAMAAAALAAIAAAAMAAQAAAALAAIAAAAMAAUAAAALAAIAAAAMAAYAAAALAAIAAAAMAAcAAAALAAIAAAAMAAgAAAALAAIAAAAMAAkAAAALAAIAAAAMAAoAAAALAAIAAAAMAAsAAAALAAIAAAAMAAwAAAALAAIAAAAMAA0AAAALAAIAAAAMAA4AAAALAAMAAAANAA4AAAAMAAMAAAAOAA4AAAAMAAMAAAAPAA4AAAAMAAMAAAAQAA4AAAAMAAMAAAARAA4AAAAMAAMAAAASAA4AAAANAAMAAAASAAcAAAANAAIAAAASAAgAAAANAAIAAAASAAkAAAANAAIAAAASAAoAAAANAAIAAAASAAsAAAANAAIAAAASAAwAAAANAAIAAAASAA0AAAANAAIAAAASAAIAAAANAAIAAAASAAMAAAANAAIAAAASAAQAAAANAAIAAAASAAUAAAANAAIAAAASAAYAAAANAAIAAAASAAEAAAANAAEAAAAfABAAAAANAA4AAAAQAAUAAAAMAAAAAAA=")
 tile_set = SubResource("TileSet_8maof")
 
@@ -1751,18 +1758,24 @@ animation = &"idle_bawah"
 position = Vector2(-11.5, 67)
 shape = SubResource("RectangleShape2D_d74vi")
 
-[node name="pak harto" type="CharacterBody2D" parent="." unique_id=531860057]
+[node name="Nusan" type="CharacterBody2D" parent="." unique_id=531860057]
 script = ExtResource("5_c57bo")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="pak harto" unique_id=284939532]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Nusan" unique_id=284939532]
 position = Vector2(264, 93)
 sprite_frames = SubResource("SpriteFrames_if0bo")
 animation = &"idle"
 frame = 3
 frame_progress = 0.43642113
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="pak harto" unique_id=897340749]
-position = Vector2(264, 97)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Nusan" unique_id=1948459977]
+position = Vector2(264, 97.5)
+shape = SubResource("RectangleShape2D_3nvsn")
+
+[node name="Area2D" type="Area2D" parent="Nusan" unique_id=1477776621]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Nusan/Area2D" unique_id=897340749]
+position = Vector2(264, 108)
 shape = SubResource("CircleShape2D_e0rsr")
 
 [node name="Textboxcontainer" type="CanvasLayer" parent="." unique_id=2033700755]
@@ -1772,12 +1785,29 @@ script = ExtResource("7_e0rsr")
 offset_top = 199.0
 offset_right = 496.0
 offset_bottom = 256.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3nvsn")
+
+[node name="Start" type="Label" parent="Textboxcontainer/PanelDialog" unique_id=1141701801]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 5.0
+offset_right = 48.0
+offset_bottom = 24.0
+theme_override_colors/font_color = Color(0.08235294, 0.627451, 1, 1)
+theme_override_fonts/font = ExtResource("8_3nvsn")
+theme_override_font_sizes/font_size = 8
+text = "Nusan: 
+"
 
 [node name="IsiDialog" type="Label" parent="Textboxcontainer/PanelDialog" unique_id=972951968]
 layout_mode = 0
-offset_left = 7.0
-offset_top = 7.0
-offset_right = 489.0
+offset_left = 19.0
+offset_top = 19.0
+offset_right = 478.0
 offset_bottom = 49.0
+theme_override_fonts/font = ExtResource("8_3nvsn")
+theme_override_font_sizes/font_size = 8
+text = "test"
 
 [connection signal="frame_changed" from="player/AnimatedSprite2D" to="player" method="_on_animated_sprite_2d_frame_changed"]
+[connection signal="body_entered" from="Nusan/Area2D" to="Nusan" method="_on_area_2d_body_entered"]

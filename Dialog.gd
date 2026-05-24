@@ -2,69 +2,72 @@ extends CanvasLayer
 
 const CHAR_READ_RATE = 0.05
 
-@onready var textbox_container = $mapRahasia/TextboxContainer
-@onready var label = $mapRahasia/Textboxcontainer/PanelDialog/IsiDialog
+var textbox_container
+var label
+var start_symbol
 
-enum State {
-	READY,
-	READING,
-	FINISHED
-}
+enum State { READY, READING, FINISHED }
 
 var current_state = State.READY
 var text_queue = []
+var is_active = false  # ← tambah ini
 
 func _ready():
-	print("Starting state: State.READY")
+	await get_tree().process_frame
+	var scene_root = get_tree().current_scene
+	textbox_container = scene_root.find_child("Textboxcontainer", true, false)
+	label = scene_root.find_child("IsiDialog", true, false)
+	start_symbol = scene_root.find_child("Start", true, false)
 	hide_textbox()
-	queue_text("Excuse me wanderer where can I find the bathroom?")
-	queue_text("Why do we not look like the others?")
-	queue_text("Because we are free assets from opengameart!")
-	queue_text("Thanks for watching!")
 
-func _process(delta):
+# ← Fungsi baru yang dipanggil NPC
+func start_dialog(texts: Array):
+	if is_active:
+		return
+	is_active = true
+	text_queue.clear()
+	for t in texts:
+		queue_text(t)
+	current_state = State.READY
+
+func _process(_delta):
+	if !is_active:  # ← skip kalau dialog tidak aktif
+		return
 	match current_state:
 		State.READY:
-			if !text_queue.empty():
+			if !text_queue.is_empty():
 				display_text()
 		State.READING:
 			if Input.is_action_just_pressed("ui_accept"):
-				label.percent_visible = 1.0
-				$Tween.remove_all()
+				label.visible_ratio = 1.0
 				change_state(State.FINISHED)
 		State.FINISHED:
 			if Input.is_action_just_pressed("ui_accept"):
 				change_state(State.READY)
 				hide_textbox()
+				is_active = false  # ← dialog selesai
 
 func queue_text(next_text):
 	text_queue.push_back(next_text)
 
 func hide_textbox():
-	label.text = ""
-	textbox_container.hide()
+	if label: label.text = ""
+	if textbox_container: textbox_container.hide()
+	if start_symbol: start_symbol.text = ""
 
 func show_textbox():
-	textbox_container.show()
+	if textbox_container: textbox_container.show()
+	if start_symbol: start_symbol.text = "Nusan: "
 
 func display_text():
 	var next_text = text_queue.pop_front()
 	label.text = next_text
-	label.percent_visible = 0.0
+	label.visible_ratio = 0.0
 	change_state(State.READING)
 	show_textbox()
-	$Tween.interpolate_property(label, "percent_visible", 0.0, 1.0, len(next_text) * CHAR_READ_RATE, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-	$Tween.start()
+	var tween = create_tween()
+	tween.tween_property(label, "visible_ratio", 1.0, len(next_text) * CHAR_READ_RATE)
+	tween.finished.connect(func(): change_state(State.FINISHED))
 
 func change_state(next_state):
 	current_state = next_state
-	match current_state:
-		State.READY:
-			print("Changing state to: State.READY")
-		State.READING:
-			print("Changing state to: State.READING")
-		State.FINISHED:
-			print("Changing state to: State.FINISHED")
-
-func _on_Tween_tween_completed(object, key):
-	change_state(State.FINISHED)
