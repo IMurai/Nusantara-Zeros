@@ -42,10 +42,12 @@ func _process(_delta):
 				change_state(State.FINISHED)
 		State.FINISHED:
 			if Input.is_action_just_pressed("ui_accept"):
-				change_state(State.READY)
-				hide_textbox()
-				is_active = false  # ← dialog selesai
-
+				if text_queue.is_empty():
+					hide_textbox()
+					is_active = false
+				else:
+					change_state(State.READY)
+					
 func queue_text(next_text):
 	text_queue.push_back(next_text)
 
@@ -59,6 +61,10 @@ func show_textbox():
 	if start_symbol: start_symbol.text = "Nusan: "
 
 func display_text():
+	#if label == null or !is_instance_valid(label):
+		#is_active = false
+		#return
+	
 	var next_text = text_queue.pop_front()
 	label.text = next_text
 	label.visible_ratio = 0.0

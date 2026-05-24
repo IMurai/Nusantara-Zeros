@@ -15,13 +15,13 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Nusantara-Zero vol 2"
-run/main_scene="uid://d0g1dtgwq8eya"
+run/main_scene="uid://cvd3udd5ihxaa"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-DialogueManager="*uid://c3rodes2l3gxb"
+DialogueManager="*uid://dln56ox630o15"
 
 [display]
 

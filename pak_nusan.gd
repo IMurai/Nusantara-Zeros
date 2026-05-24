@@ -13,8 +13,6 @@ const DIALOG_TEXTS = [
 func _ready():
 	sprite.play("idle")
 	
-
-	
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		DialogueManager.start_dialog(DIALOG_TEXTS)
