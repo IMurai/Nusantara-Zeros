@@ -33,6 +33,9 @@ var skor = 0
 @onready var tombol_d    = $KotakKuis/TombolD
 @onready var hasil_label = $HasilLabel
 
+func _ready():
+	hide()
+
 func mulai_kuis():
 	index_soal = 0
 	skor = 0

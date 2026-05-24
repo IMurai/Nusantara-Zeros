@@ -5,6 +5,7 @@
 [sub_resource type="ViewportTexture" id="ViewportTexture_ojc1f"]
 
 [node name="QuizOverlay" type="CanvasLayer" unique_id=1082558625]
+follow_viewport_enabled = true
 script = ExtResource("1_lxaf5")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1132233979]
@@ -66,3 +67,8 @@ offset_left = 21.0
 offset_top = 8.0
 offset_right = 368.0
 offset_bottom = 31.0
+
+[connection signal="pressed" from="KotakKuis/TombolA" to="." method="_on_tombol_a_pressed"]
+[connection signal="pressed" from="KotakKuis/TombolB" to="." method="_on_tombol_b_pressed"]
+[connection signal="pressed" from="KotakKuis/TombolC" to="." method="_on_tombol_c_pressed"]
+[connection signal="pressed" from="KotakKuis/TombolD" to="." method="_on_tombol_d_pressed"]

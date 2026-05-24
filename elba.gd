@@ -19,6 +19,9 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		sudah_terhubung = true
 		DialogueManager.dialog_selesai.connect(_on_dialog_selesai)
 		DialogueManager.start_dialog(DIALOG_TEXTS)
+		
+	if not DialogueManager.dialog_selesai.is_connected(_on_dialog_selesai):
+		DialogueManager.dialog_selesai.connect(_on_dialog_selesai)
 	
 func _on_dialog_selesai():
 	DialogueManager.dialog_selesai.disconnect(_on_dialog_selesai)
