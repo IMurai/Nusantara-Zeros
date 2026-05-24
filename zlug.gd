@@ -5,7 +5,7 @@ extends CharacterBody2D
 const DIALOG_TEXTS = [
 	"Kau bukan dari sini. Pakaianmu aneh.",
 	"Kami tidak tinggal lama di satu tempat. Kalau makanan habis, kami jalan lagi. Begitu terus.",
-	"Kapak Perimbas itu itu jangan dipegang sembarangan. Kami memilih batu yang keras dan bisa dipecah tajam. 
+	"Kapak Perimbas itu itu jangan dipegang sembarangan. Kami memilih batu yang keras dan bisa dipecah kasar. 
 	Tidak semua batu bisa jadi Kapak Perimbas."
 ]
 

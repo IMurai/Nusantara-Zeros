@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://cax6l672o118a"]
+
+[ext_resource type="Texture2D" uid="uid://bw5e4j6jfyh0s" path="res://arts/Screenshot 2026-05-24 184705.png" id="1_fu7sn"]
+[ext_resource type="FontFile" uid="uid://b1lvfkcxp0ybw" path="res://Font/BoldPixels.ttf" id="2_jix8l"]
+[ext_resource type="Texture2D" uid="uid://grdvye51qh4y" path="res://arts/tilesets/plains.png" id="3_glbon"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nlkkf"]
+texture = ExtResource("1_fu7sn")
+
+[sub_resource type="GDScript" id="GDScript_jix8l"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+@onready var anim = $\"AnimationPlayer\"
+
+func _ready() -> void:
+	anim.play(\"Kedip\")
+
+
+func _on_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://cutscne_satu\")
+"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0o4t1"]
+texture = ExtResource("3_glbon")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_0k4wn"]
+sources/0 = SubResource("TileSetAtlasSource_0o4t1")
+
+[node name="MainMenu" type="Control" unique_id=445145575]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="Panel" parent="." unique_id=830205174]
+layout_mode = 0
+offset_right = 483.0
+offset_bottom = 259.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_nlkkf")
+
+[node name="Button" type="Button" parent="." unique_id=639799291]
+modulate = Color(0, 0, 0, 0.99215686)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -840.0
+offset_top = -1203.0
+offset_right = -632.0
+offset_bottom = -1149.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_jix8l")
+theme_override_font_sizes/font_size = 24
+text = "Press to Start"
+flat = true
+script = SubResource("GDScript_jix8l")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1026689537]
+tile_map_data = PackedByteArray(0, 0, 30, 0, 15, 0, 0, 0, 2, 0, 5, 0, 0, 0)
+tile_set = SubResource("TileSet_0k4wn")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

@@ -2,21 +2,21 @@ extends CanvasLayer
 
 var soal_list = [
 	{
-		"pertanyaan": "Alat yang dipakai orang zaman Paleolitikum adalah...",
+		"pertanyaan": "Alat yang dipakai manusia\nzaman Paleolitikum adalah...",
 		"pilihan": ["Beliung Persegi", "Kapak Perimbas", "AK37", "Kapak Lonjong"],
 		"benar": 1
 	},
 	{
-		"pertanyaan": "Cara hidup manusia pada zaman Paleolitikum adalah...",
+		"pertanyaan": "Cara hidup manusia\nzaman Paleolitikum adalah...",
 		"pilihan": ["Sedenter", "Agraris", "Nomaden", "Maritim"],
 		"benar": 2
 	},
 	{
-		"pertanyaan": "Alat batu Paleolitikum dibuat dengan cara...",
+		"pertanyaan": "Alat batu Paleolitikum\ndibuat dengan cara...",
 		"pilihan": [
 			"Diasah halus",
-			"Dicetak dari tanah liat",
-			"Dipecah kasar tanpa diasah",
+			"Dicetak",
+			"Dipecah kasar",
 			"Dilebur dengan api"
 		],
 		"benar": 2
@@ -31,7 +31,7 @@ var skor = 0
 @onready var tombol_b    = $KotakKuis/TombolB
 @onready var tombol_c    = $KotakKuis/TombolC
 @onready var tombol_d    = $KotakKuis/TombolD
-@onready var hasil_label = $HasilLabel
+@onready var hasil_label = $KotakKuis/HasilLabel
 
 func _ready():
 	hide()
@@ -86,7 +86,7 @@ func selesai():
 		hasil_label.text = "Skor: %d/3 — Lulus! Melanjutkan..." % skor
 		await get_tree().create_timer(2.0).timeout
 		hide()
-		get_tree().change_scene_to_file("res://map_paleolitikum.tscn")
+		get_tree().change_scene_to_file("res://map_rahasia2.tscn")
 	else:
 		hasil_label.text = "Skor: %d/3 — Belum lulus. Coba lagi!" % skor
 		await get_tree().create_timer(2.0).timeout
