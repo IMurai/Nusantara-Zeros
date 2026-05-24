@@ -76,7 +76,8 @@ func hide_textbox():
 
 func show_textbox():
 	if textbox_container: textbox_container.show()
-	if start_symbol: start_symbol.text = _speaker_name
+	if start_symbol: 
+		start_symbol.text = _speaker_name
 
 func display_text():
 	var next_text = text_queue.pop_front()

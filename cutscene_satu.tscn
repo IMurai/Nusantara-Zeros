@@ -3,18 +3,20 @@
 [ext_resource type="Script" uid="uid://cvovuahgf3lya" path="res://script/cutscene_satu.gd" id="1_3oyc5"]
 [ext_resource type="FontFile" uid="uid://cccmj080pymaq" path="res://Font/Minecraft.ttf" id="2_vrpj2"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_53ed0"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3oyc5"]
 bg_color = Color(0, 0, 0, 0.92156863)
 
-[node name="Textboxcontainer" type="CanvasLayer" unique_id=1816385089]
+[node name="cutsceneSatu" type="Node2D" unique_id=573450913]
+
+[node name="Textboxcontainer" type="CanvasLayer" parent="." unique_id=990865525]
 script = ExtResource("1_3oyc5")
 
-[node name="PanelDialog" type="Panel" parent="." unique_id=1777403417]
+[node name="PanelDialog" type="Panel" parent="Textboxcontainer" unique_id=48201734]
 offset_right = 496.0
 offset_bottom = 256.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_53ed0")
+theme_override_styles/panel = SubResource("StyleBoxFlat_3oyc5")
 
-[node name="Start" type="Label" parent="PanelDialog" unique_id=890140337]
+[node name="Start" type="Label" parent="Textboxcontainer/PanelDialog" unique_id=956222178]
 visible = false
 layout_mode = 0
 offset_left = 19.0
@@ -25,18 +27,20 @@ theme_override_colors/font_color = Color(0.08235294, 0.627451, 1, 1)
 theme_override_fonts/font = ExtResource("2_vrpj2")
 theme_override_font_sizes/font_size = 8
 
-[node name="IsiDialog" type="Label" parent="PanelDialog" unique_id=410136844]
+[node name="IsiDialog" type="Label" parent="Textboxcontainer/PanelDialog" unique_id=229749141]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -216.25
-offset_top = -36.0
-offset_right = 216.25
-offset_bottom = 36.0
+offset_left = -214.75
+offset_top = -39.0
+offset_right = 214.75
+offset_bottom = 39.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_vrpj2")
-theme_override_font_sizes/font_size = 8
+theme_override_font_sizes/font_size = 12
+horizontal_alignment = 1
+vertical_alignment = 1
