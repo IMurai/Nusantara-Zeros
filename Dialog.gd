@@ -2,9 +2,10 @@ extends CanvasLayer
 
 const CHAR_READ_RATE = 0.05
 
+signal dialog_finished
+
 var textbox_container
 var label
-var start_symbol
 
 enum State { READY, READING, FINISHED }
 
@@ -17,7 +18,11 @@ func _ready():
 	var scene_root = get_tree().current_scene
 	textbox_container = scene_root.find_child("Textboxcontainer", true, false)
 	label = scene_root.find_child("IsiDialog", true, false)
-	start_symbol = scene_root.find_child("Start", true, false)
+	
+	# Debug — cek apakah ketemu
+	print("textbox_container: ", textbox_container)
+	print("label: ", label)
+	
 	hide_textbox()
 
 func start_dialog(texts: Array):
@@ -45,6 +50,7 @@ func _process(_delta):
 				if text_queue.is_empty():
 					hide_textbox()
 					is_active = false
+					dialog_finished.emit()
 				else:
 					change_state(State.READY)
 					
@@ -54,11 +60,9 @@ func queue_text(next_text):
 func hide_textbox():
 	if label: label.text = ""
 	if textbox_container: textbox_container.hide()
-	if start_symbol: start_symbol.text = ""
 
 func show_textbox():
 	if textbox_container: textbox_container.show()
-	if start_symbol: start_symbol.text = "Nusan: "
 
 func display_text():
 	var next_text = text_queue.pop_front()
