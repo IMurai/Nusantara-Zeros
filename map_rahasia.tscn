@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://n7305sibqspd" path="res://arts/tilesets/tileset_museum.png" id="1_48bhg"]
 [ext_resource type="Texture2D" uid="uid://btlcyvl3c463" path="res://arts/objects/museum/interior.png" id="2_c57bo"]
-[ext_resource type="Texture2D" uid="uid://cnhgjeo1vbn4d" path="res://arts/characters/NPC/Pak Nurman/Pak Nurman.png" id="3_e0rsr"]
+[ext_resource type="Texture2D" uid="uid://cnhgjeo1vbn4d" path="res://arts/characters/NPC/Nusan/Pak Nurman.png" id="3_e0rsr"]
 [ext_resource type="Script" uid="uid://dpiqq2vp5i8wq" path="res://player.gd" id="4_3nvsn"]
 [ext_resource type="Script" uid="uid://me8x2rlky676" path="res://pak_nusan.gd" id="5_c57bo"]
 [ext_resource type="Texture2D" uid="uid://d2l27y54anqdh" path="res://arts/characters/player.png" id="5_h0ru7"]

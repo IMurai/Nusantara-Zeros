@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnhgjeo1vbn4d"
-path="res://.godot/imported/Pak Nurman.png-964b977289953d297962374c8d8541cf.ctex"
+uid="uid://d2uajnbc4vscl"
+path="res://.godot/imported/Water+.png-ccd9cec0c02bb9c46e92fb16e860a788.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arts/characters/NPC/Pak Nurman/Pak Nurman.png"
-dest_files=["res://.godot/imported/Pak Nurman.png-964b977289953d297962374c8d8541cf.ctex"]
+source_file="res://arts/tilesets/Water+.png"
+dest_files=["res://.godot/imported/Water+.png-ccd9cec0c02bb9c46e92fb16e860a788.ctex"]
 
 [params]
 

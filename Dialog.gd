@@ -61,10 +61,6 @@ func show_textbox():
 	if start_symbol: start_symbol.text = "Nusan: "
 
 func display_text():
-	#if label == null or !is_instance_valid(label):
-		#is_active = false
-		#return
-	
 	var next_text = text_queue.pop_front()
 	label.text = next_text
 	label.visible_ratio = 0.0
