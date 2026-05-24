@@ -6,6 +6,8 @@ signal dialog_finished
 
 var textbox_container
 var label
+var start_symbol
+var _speaker_name = "NPC: "
 
 enum State { READY, READING, FINISHED }
 
@@ -14,20 +16,17 @@ var text_queue = []
 var is_active = false  # ← tambah ini
 
 func _ready():
-	await get_tree().process_frame
+	pass
+
+func start_dialog(texts: Array, speaker_name: String = "NPC: "):
+	if is_active:
+		return
 	var scene_root = get_tree().current_scene
 	textbox_container = scene_root.find_child("Textboxcontainer", true, false)
 	label = scene_root.find_child("IsiDialog", true, false)
+	start_symbol = scene_root.find_child("Start", true, false)
 	
-	# Debug — cek apakah ketemu
-	print("textbox_container: ", textbox_container)
-	print("label: ", label)
-	
-	hide_textbox()
-
-func start_dialog(texts: Array):
-	if is_active:
-		return
+	_speaker_name = speaker_name
 	is_active = true
 	text_queue.clear()
 	for t in texts:
@@ -60,9 +59,11 @@ func queue_text(next_text):
 func hide_textbox():
 	if label: label.text = ""
 	if textbox_container: textbox_container.hide()
+	if start_symbol: start_symbol.text = ""
 
 func show_textbox():
 	if textbox_container: textbox_container.show()
+	if start_symbol: start_symbol.text = _speaker_name
 
 func display_text():
 	var next_text = text_queue.pop_front()

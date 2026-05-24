@@ -15,5 +15,5 @@ func _ready():
 	
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		DialogueManager.start_dialog(DIALOG_TEXTS)
+		DialogueManager.call_deferred("start_dialog", DIALOG_TEXTS, "Nusan: ")
 		#get_tree().change_scene_to_file("res://map_paleolitikum.tscn")
