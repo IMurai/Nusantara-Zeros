@@ -3,6 +3,7 @@ extends CanvasLayer
 const CHAR_READ_RATE = 0.05
 
 signal dialog_finished
+signal dialog_selesai
 
 var textbox_container
 var label
@@ -71,6 +72,7 @@ func hide_textbox():
 	if label: label.text = ""
 	if textbox_container: textbox_container.hide()
 	if start_symbol: start_symbol.text = ""
+	emit_signal("dialog_selesai")
 
 func show_textbox():
 	if textbox_container: textbox_container.show()
