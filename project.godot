@@ -30,9 +30,13 @@ window/size/viewport_height=1348
 window/stretch/scale=4.0
 window/main_scene="uid://cvd3udd5ihxaa"
 
+[editor]
+
+version_control/autoload_on_startup=true
+
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [input]
 

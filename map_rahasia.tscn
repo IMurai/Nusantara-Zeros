@@ -1741,7 +1741,8 @@ tile_set = SubResource("TileSet_8maof")
 tile_map_data = PackedByteArray("AAAPAAUAAAAGAEoAAAA=")
 tile_set = SubResource("TileSet_bejsb")
 
-[node name="player" type="CharacterBody2D" parent="." unique_id=1883732585]
+[node name="player" type="CharacterBody2D" parent="." unique_id=1883732585 groups=["player"]]
+light_mask = 16
 z_index = 1
 y_sort_enabled = true
 position = Vector2(258, 105)
@@ -1773,8 +1774,10 @@ position = Vector2(264, 97.5)
 shape = SubResource("RectangleShape2D_3nvsn")
 
 [node name="Area2D" type="Area2D" parent="Nusan" unique_id=1477776621]
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Nusan/Area2D" unique_id=897340749]
+light_mask = 16
 position = Vector2(264, 108)
 shape = SubResource("CircleShape2D_e0rsr")
 

@@ -20,7 +20,6 @@ func _ready():
 	start_symbol = scene_root.find_child("Start", true, false)
 	hide_textbox()
 
-# ← Fungsi baru yang dipanggil NPC
 func start_dialog(texts: Array):
 	if is_active:
 		return
