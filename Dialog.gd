@@ -27,8 +27,6 @@ func start_dialog(texts: Array, speaker_name: String = "NPC: "):
 	label = scene_root.find_child("IsiDialog", true, false)
 	start_symbol = scene_root.find_child("Start", true, false)
 	
-	await get_tree().process_frame
-	
 	if not label or not textbox_container:
 		push_error("Dialog: node tidak ditemukan di scene '%s'" % scene_root.name)
 		return

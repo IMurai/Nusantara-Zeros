@@ -4,12 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://bgiuvn104klyr" path="res://arts/tilesets/Tileset Spring.png" id="2_i12tj"]
 [ext_resource type="Texture2D" uid="uid://n7305sibqspd" path="res://arts/tilesets/tileset_museum.png" id="2_u5fd2"]
 [ext_resource type="Texture2D" uid="uid://btlcyvl3c463" path="res://arts/objects/museum/interior.png" id="3_i12tj"]
-[ext_resource type="Script" uid="uid://bbnuay03qf83v" path="res://to_paleolitikum.gd" id="4_30tpu"]
 [ext_resource type="Script" uid="uid://dpiqq2vp5i8wq" path="res://player.gd" id="5_6ysut"]
 [ext_resource type="Texture2D" uid="uid://d2l27y54anqdh" path="res://arts/characters/player.png" id="6_8t0jt"]
 [ext_resource type="Script" uid="uid://ci2i27sw50qr4" path="res://nusan2.gd" id="7_cv6h6"]
 [ext_resource type="Texture2D" uid="uid://cnhgjeo1vbn4d" path="res://arts/characters/NPC/Nusan/Pak Nurman.png" id="8_cgjw2"]
 [ext_resource type="FontFile" uid="uid://cccmj080pymaq" path="res://Font/Minecraft.ttf" id="9_ydifs"]
+[ext_resource type="Script" uid="uid://cacugh6yukxdy" path="res://fragment.gd" id="10_i12tj"]
+[ext_resource type="Texture2D" uid="uid://cla2ktjh3j57o" path="res://arts/objects/museum/spr_coin_strip4.png" id="11_30tpu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_30tpu"]
 texture = ExtResource("2_i12tj")
@@ -1872,9 +1873,6 @@ texture = ExtResource("3_i12tj")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_uto1m")
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_nwyu4"]
-radius = 8.0
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_e352r"]
 atlas = ExtResource("6_8t0jt")
 region = Rect2(0, 96, 48, 48)
@@ -2208,6 +2206,42 @@ radius = 4.0
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3nvsn"]
 bg_color = Color(0, 0, 0, 0.92156863)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_bejsb"]
+atlas = ExtResource("11_30tpu")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_if0bo"]
+atlas = ExtResource("11_30tpu")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ism1r"]
+atlas = ExtResource("11_30tpu")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d74vi"]
+atlas = ExtResource("11_30tpu")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6ysut"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bejsb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_if0bo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ism1r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d74vi")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
 [node name="mapRahasia" type="Node2D" unique_id=628464742]
 script = ExtResource("1_cv6h6")
 
@@ -2222,14 +2256,6 @@ tile_set = SubResource("TileSet_8maof")
 [node name="object" type="TileMapLayer" parent="." unique_id=1479896683]
 tile_map_data = PackedByteArray("AAAPAAUAAAAGAEoAAAA=")
 tile_set = SubResource("TileSet_bejsb")
-
-[node name="Area2D" type="Area2D" parent="." unique_id=1323212939]
-collision_mask = 2
-script = ExtResource("4_30tpu")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1088288119]
-position = Vector2(248, 98)
-shape = SubResource("CircleShape2D_nwyu4")
 
 [node name="player" type="CharacterBody2D" parent="." unique_id=1883732585 groups=["player"]]
 light_mask = 16
@@ -2297,6 +2323,15 @@ offset_right = 478.0
 offset_bottom = 49.0
 theme_override_fonts/font = ExtResource("9_ydifs")
 theme_override_font_sizes/font_size = 8
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1468117194]
+script = ExtResource("10_i12tj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=698044765]
+position = Vector2(248, 79.5)
+scale = Vector2(0.75, 0.6874999)
+sprite_frames = SubResource("SpriteFrames_6ysut")
+animation = &"idle"
 
 [connection signal="frame_changed" from="player/AnimatedSprite2D" to="player" method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="body_entered" from="Nusan/Area2D" to="Nusan" method="_on_area_2d_body_entered"]

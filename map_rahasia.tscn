@@ -9,7 +9,8 @@
 [ext_resource type="Script" uid="uid://me8x2rlky676" path="res://nusan.gd" id="5_c57bo"]
 [ext_resource type="Texture2D" uid="uid://d2l27y54anqdh" path="res://arts/characters/player.png" id="5_h0ru7"]
 [ext_resource type="FontFile" uid="uid://cccmj080pymaq" path="res://Font/Minecraft.ttf" id="8_3nvsn"]
-[ext_resource type="Script" uid="uid://bbnuay03qf83v" path="res://to_paleolitikum.gd" id="9_h0ru7"]
+[ext_resource type="Script" uid="uid://cacugh6yukxdy" path="res://fragment.gd" id="10_8maof"]
+[ext_resource type="Texture2D" uid="uid://cla2ktjh3j57o" path="res://arts/objects/museum/spr_coin_strip4.png" id="11_uto1m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8maof"]
 texture = ExtResource("2_nwyu4")
@@ -1967,8 +1968,41 @@ radius = 4.0
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3nvsn"]
 bg_color = Color(0, 0, 0, 0.92156863)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_nwyu4"]
-radius = 8.0
+[sub_resource type="AtlasTexture" id="AtlasTexture_bejsb"]
+atlas = ExtResource("11_uto1m")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_if0bo"]
+atlas = ExtResource("11_uto1m")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ism1r"]
+atlas = ExtResource("11_uto1m")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d74vi"]
+atlas = ExtResource("11_uto1m")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mh73p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bejsb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_if0bo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ism1r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d74vi")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [node name="mapRahasia" type="Node2D" unique_id=628464742]
 script = ExtResource("1_3nvsn")
@@ -2052,13 +2086,15 @@ offset_bottom = 49.0
 theme_override_fonts/font = ExtResource("8_3nvsn")
 theme_override_font_sizes/font_size = 8
 
-[node name="Area2D" type="Area2D" parent="." unique_id=690817044]
-collision_mask = 2
-script = ExtResource("9_h0ru7")
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1101573899]
+script = ExtResource("10_8maof")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1494290428]
-position = Vector2(248, 97)
-shape = SubResource("CircleShape2D_nwyu4")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=988268386]
+position = Vector2(248, 79.5)
+scale = Vector2(0.75, 0.6874999)
+sprite_frames = SubResource("SpriteFrames_mh73p")
+animation = &"idle"
+frame_progress = 0.6759912
 
 [connection signal="frame_changed" from="player/AnimatedSprite2D" to="player" method="_on_animated_sprite_2d_frame_changed"]
 [connection signal="body_entered" from="Nusan/Area2D" to="Nusan" method="_on_area_2d_body_entered"]

@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var sprite := $AnimatedSprite2D
+var sudah_terhubung = false
 
 	
 const DIALOG_TEXTS = [
@@ -16,4 +17,14 @@ func _ready():
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		DialogueManager.call_deferred("start_dialog", DIALOG_TEXTS, "Nusan: ")
-		#get_tree().change_scene_to_file("res://map_paleolitikum.tscn")
+		sudah_terhubung = true
+		DialogueManager.dialog_selesai.connect(_on_dialog_selesai)
+		DialogueManager.start_dialog(DIALOG_TEXTS)
+		
+	if not DialogueManager.dialog_selesai.is_connected(_on_dialog_selesai):
+		DialogueManager.dialog_selesai.connect(_on_dialog_selesai)
+	
+func _on_dialog_selesai():
+	Transition.transition()
+	await Transition.on_transition_finished
+	get_tree().call_deferred("change_scene_to_file", "res://map_paleolitikum.tscn")

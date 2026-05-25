@@ -4,7 +4,7 @@ const KECEPATAN = 130
 var state: State
 var states = {}
 var vel = Vector2.ZERO
-var arah_terakhir = Vector2.RIGHT
+var arah_terakhir = Vector2.DOWN
 
 func _ready():
 	# load states
