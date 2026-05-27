@@ -12,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://d086jeoe3r3vl" path="res://arts/Button/Main Menu/Exit/EXIT_CLICK.png" id="8_g8g3n"]
 [ext_resource type="Texture2D" uid="uid://cvjgdpihy0vfi" path="res://arts/Button/Main Menu/Start/START_HOVER.png" id="9_0k4wn"]
 [ext_resource type="Texture2D" uid="uid://d3gqg2ilp3l1k" path="res://arts/Button/Main Menu/Exit/EXIT_HOVER.png" id="9_8u0te"]
-[ext_resource type="Script" uid="uid://c23t2y0rtkjea" path="res://exit_button.gd" id="10_8u0te"]
 [ext_resource type="Texture2D" uid="uid://c6oelqiqcbux8" path="res://arts/Button/Main Menu/Credits/CREDITS_NORMAL.png" id="13_oiatc"]
 [ext_resource type="Texture2D" uid="uid://b30yulwyntxje" path="res://arts/Button/Main Menu/Credits/CREDITS_CLICK.png" id="14_mg3m2"]
 [ext_resource type="Texture2D" uid="uid://ca5wiqxgnceh" path="res://arts/Button/Main Menu/Credits/CREDITS_HOVER.png" id="15_ojb7r"]
@@ -1244,10 +1243,6 @@ func _on_pressed() -> void:
 	Transition.transition()
 	await Transition.on_transition_finished
 	get_tree().change_scene_to_file(\"res://cutscene_satu.tscn\")
-
-
-func _on_exit_pressed() -> void:
-	pass # Replace with function body.
 "
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0k4wn"]
@@ -1308,7 +1303,6 @@ scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("7_cm266")
 texture_pressed = ExtResource("8_g8g3n")
 texture_hover = ExtResource("9_8u0te")
-script = ExtResource("10_8u0te")
 
 [node name="CREDITS" type="TextureButton" parent="." unique_id=1621101999]
 layout_mode = 0
@@ -1334,5 +1328,4 @@ texture_hover = ExtResource("9_0k4wn")
 script = ExtResource("16_g8g3n")
 
 [connection signal="pressed" from="Exit" to="Exit" method="_on_pressed"]
-[connection signal="pressed" from="EXIT" to="EXIT" method="_on_pressed"]
 [connection signal="pressed" from="START" to="START" method="_on_pressed"]
