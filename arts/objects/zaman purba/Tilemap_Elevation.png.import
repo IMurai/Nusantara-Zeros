@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2rjcfltls835"
-path="res://.godot/imported/rock_in_water_04.png-7c9f9eccedb081a4339530d3f85c05d6.ctex"
+uid="uid://ccpt33lw0tyfw"
+path="res://.godot/imported/Tilemap_Elevation.png-e059bcdb7f4085ac3f131fe2bd063311.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arts/objects/zaman purba/rock_in_water_04.png"
-dest_files=["res://.godot/imported/rock_in_water_04.png-7c9f9eccedb081a4339530d3f85c05d6.ctex"]
+source_file="res://arts/objects/zaman purba/Tilemap_Elevation.png"
+dest_files=["res://.godot/imported/Tilemap_Elevation.png-e059bcdb7f4085ac3f131fe2bd063311.ctex"]
 
 [params]
 

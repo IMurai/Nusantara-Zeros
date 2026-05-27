@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4k31l3j2itvq"
-path="res://.godot/imported/rock_in_water_01-sheet.png-bc87bd26e3aae5e4fa90b45ebba465a3.ctex"
+uid="uid://cjoa7rfke4a0r"
+path="res://.godot/imported/Tilemap_Flat.png-ed7846aee7b7c9a00cff666a26c33d93.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arts/objects/zaman purba/rock_in_water_01-sheet.png"
-dest_files=["res://.godot/imported/rock_in_water_01-sheet.png-bc87bd26e3aae5e4fa90b45ebba465a3.ctex"]
+source_file="res://arts/objects/zaman purba/Tilemap_Flat.png"
+dest_files=["res://.godot/imported/Tilemap_Flat.png-ed7846aee7b7c9a00cff666a26c33d93.ctex"]
 
 [params]
 

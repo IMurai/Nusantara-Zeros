@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpy84lpmqkmfo"
-path="res://.godot/imported/rock_in_water_03.png-e548c1080c6f208792627c81ac50a136.ctex"
+uid="uid://bm1y22j0jrr48"
+path="res://.godot/imported/Water+.png-6cf52b46bf1174343cd7fcaec9bfbd17.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arts/objects/zaman purba/rock_in_water_03.png"
-dest_files=["res://.godot/imported/rock_in_water_03.png-e548c1080c6f208792627c81ac50a136.ctex"]
+source_file="res://arts/tilesets/Water/Water+.png"
+dest_files=["res://.godot/imported/Water+.png-6cf52b46bf1174343cd7fcaec9bfbd17.ctex"]
 
 [params]
 
