@@ -1,7 +1,11 @@
 [gd_scene format=3 uid="uid://ds11gbpf23sl6"]
 
 [ext_resource type="Script" uid="uid://boduylvvd8h7" path="res://script/quiz_overlay.gd" id="1_lxaf5"]
+[ext_resource type="Texture2D" uid="uid://bdapq46xmdnsx" path="res://arts/tilesets/BACKGROUND QUIZ.png" id="2_ldxxl"]
 [ext_resource type="FontFile" uid="uid://boqc61xuaeyv6" path="res://Font/PixelPurl.ttf" id="2_lxaf5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojc1f"]
+atlas = ExtResource("2_ldxxl")
 
 [node name="QuizOverlay" type="CanvasLayer" unique_id=1082558625]
 follow_viewport_enabled = true
@@ -14,18 +18,19 @@ offset_top = 32.0
 offset_right = 432.0
 offset_bottom = 208.0
 
-[node name="KotakKuis" type="Panel" parent="." unique_id=1266158605]
+[node name="KotakKuis" type="TextureRect" parent="." unique_id=2083938576]
 offset_left = 48.0
 offset_top = 32.0
 offset_right = 432.0
 offset_bottom = 208.0
+texture = SubResource("AtlasTexture_ojc1f")
 
 [node name="Soal" type="Label" parent="KotakKuis" unique_id=1299813979]
 layout_mode = 0
 offset_left = 21.0
-offset_top = 39.0
+offset_top = 45.0
 offset_right = 368.0
-offset_bottom = 81.0
+offset_bottom = 87.0
 theme_override_fonts/font = ExtResource("2_lxaf5")
 theme_override_font_sizes/font_size = 16
 
@@ -36,8 +41,12 @@ offset_left = 21.0
 offset_top = 92.0
 offset_right = 171.0
 offset_bottom = 115.0
+theme_override_colors/font_pressed_color = Color(1, 0.827451, 0.03529412, 1)
+theme_override_colors/font_hover_color = Color(1, 0.827451, 0.03529412, 1)
 theme_override_fonts/font = ExtResource("2_lxaf5")
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 16
+flat = true
+alignment = 0
 
 [node name="TombolB" type="Button" parent="KotakKuis" unique_id=588731196]
 custom_minimum_size = Vector2(150, 23)
@@ -46,8 +55,12 @@ offset_left = 218.0
 offset_top = 92.0
 offset_right = 368.0
 offset_bottom = 115.0
+theme_override_colors/font_pressed_color = Color(1, 0.827451, 0.03529412, 1)
+theme_override_colors/font_hover_color = Color(1, 0.827451, 0.03529412, 1)
 theme_override_fonts/font = ExtResource("2_lxaf5")
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 16
+flat = true
+alignment = 0
 
 [node name="TombolC" type="Button" parent="KotakKuis" unique_id=665979286]
 custom_minimum_size = Vector2(150, 23)
@@ -56,8 +69,12 @@ offset_left = 21.0
 offset_top = 121.0
 offset_right = 171.0
 offset_bottom = 144.0
+theme_override_colors/font_pressed_color = Color(1, 0.827451, 0.03529412, 1)
+theme_override_colors/font_hover_color = Color(1, 0.827451, 0.03529412, 1)
 theme_override_fonts/font = ExtResource("2_lxaf5")
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 16
+flat = true
+alignment = 0
 
 [node name="TombolD" type="Button" parent="KotakKuis" unique_id=681507439]
 custom_minimum_size = Vector2(150, 23)
@@ -66,17 +83,30 @@ offset_left = 218.0
 offset_top = 121.0
 offset_right = 368.0
 offset_bottom = 144.0
+theme_override_colors/font_pressed_color = Color(1, 0.827451, 0.03529412, 1)
+theme_override_colors/font_hover_color = Color(1, 0.827451, 0.03529412, 1)
 theme_override_fonts/font = ExtResource("2_lxaf5")
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 16
+flat = true
+alignment = 0
 
 [node name="HasilLabel" type="Label" parent="KotakKuis" unique_id=464325879]
 layout_mode = 0
 offset_left = 21.0
-offset_top = 8.0
+offset_top = 15.0
 offset_right = 368.0
-offset_bottom = 31.0
+offset_bottom = 38.0
+theme_override_colors/font_color = Color(1, 0.827451, 0.03529412, 1)
 theme_override_fonts/font = ExtResource("2_lxaf5")
 theme_override_font_sizes/font_size = 16
+
+[node name="d" type="Panel" parent="." unique_id=1266158605]
+visible = false
+offset_left = 48.0
+offset_top = 32.0
+offset_right = 432.0
+offset_bottom = 208.0
+mouse_force_pass_scroll_events = false
 
 [connection signal="pressed" from="KotakKuis/TombolA" to="." method="_on_tombol_a_pressed"]
 [connection signal="pressed" from="KotakKuis/TombolB" to="." method="_on_tombol_b_pressed"]

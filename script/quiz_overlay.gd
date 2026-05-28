@@ -3,7 +3,7 @@ extends CanvasLayer
 var soal_list = [
 	{
 		"pertanyaan": "Alat yang dipakai manusia\nzaman Paleolitikum adalah...",
-		"pilihan": ["Beliung Persegi", "Kapak Perimbas", "AK37", "Kapak Lonjong"],
+		"pilihan": ["Beliung Persegi", "Kapak Perimbas", "AK47", "Kapak Lonjong"],
 		"benar": 1
 	},
 	{
@@ -65,10 +65,10 @@ func cek_jawaban(pilihan: int):
 
 	if pilihan == soal_list[index_soal]["benar"]:
 		skor += 1
-		hasil_label.text = "✓  Benar!"
+		hasil_label.text = "Benar!"
 	else:
 		var jawaban_benar = soal_list[index_soal]["pilihan"][soal_list[index_soal]["benar"]]
-		hasil_label.text = "✗  Salah! Jawaban: " + jawaban_benar
+		hasil_label.text = "Salah! Jawaban: " + jawaban_benar
 
 	await get_tree().create_timer(1.5).timeout
 	lanjut_soal()

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dt3liib5vf87e" path="res://cutscene_satu.gd" id="1_3oyc5"]
 [ext_resource type="FontFile" uid="uid://cccmj080pymaq" path="res://Font/Minecraft.ttf" id="2_vrpj2"]
 [ext_resource type="FontFile" uid="uid://boqc61xuaeyv6" path="res://Font/PixelPurl.ttf" id="3_vrpj2"]
+[ext_resource type="Texture2D" uid="uid://u08waqysfvhk" path="res://arts/tilesets/BACKGROUND.png" id="4_k3ipc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3oyc5"]
 bg_color = Color(0, 0, 0, 0.92156863)
@@ -48,3 +49,120 @@ theme_override_font_sizes/font_size = 16
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1274273654]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -799.0
+offset_top = 19.0
+offset_right = -687.0
+offset_bottom = 194.0
+grow_horizontal = 2
+texture = ExtResource("4_k3ipc")
+
+[node name="Label" type="Label" parent="." unique_id=1921477974]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -779.5
+offset_top = 31.0
+offset_right = -706.5
+offset_bottom = 54.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.827451, 0.03529412, 1)
+theme_override_fonts/font = ExtResource("3_vrpj2")
+text = "> CREADITS <"
+
+[node name="Label4" type="Label" parent="." unique_id=911420609]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -765.5
+offset_top = 140.0
+offset_right = -720.5
+offset_bottom = 163.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.827451, 0.03529412, 1)
+theme_override_fonts/font = ExtResource("3_vrpj2")
+theme_override_font_sizes/font_size = 12
+text = "Third Party"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Label4" unique_id=9099910]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -31.5
+offset_right = 31.5
+offset_bottom = 49.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_vrpj2")
+theme_override_font_sizes/font_size = 10
+text = "Itch.io
+craftpix.net"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="." unique_id=707932928]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -764.5
+offset_top = 98.0
+offset_right = -721.5
+offset_bottom = 121.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.827451, 0.03529412, 1)
+theme_override_fonts/font = ExtResource("3_vrpj2")
+theme_override_font_sizes/font_size = 12
+text = "Software"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Label3" unique_id=3083496]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -31.5
+offset_right = 31.5
+offset_bottom = 49.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_vrpj2")
+theme_override_font_sizes/font_size = 10
+text = "Godot Engine
+LibreSprite"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="." unique_id=1510661708]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -764.5
+offset_top = 56.0
+offset_right = -721.5
+offset_bottom = 79.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.827451, 0.03529412, 1)
+theme_override_fonts/font = ExtResource("3_vrpj2")
+theme_override_font_sizes/font_size = 12
+text = "Developers"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Label2" unique_id=1267026773]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -31.5
+offset_right = 31.5
+offset_bottom = 49.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_vrpj2")
+theme_override_font_sizes/font_size = 10
+text = "Raihaan
+Fathian"
+horizontal_alignment = 1
+vertical_alignment = 1
