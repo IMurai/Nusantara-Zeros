@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ds11gbpf23sl6"]
 
 [ext_resource type="Script" uid="uid://boduylvvd8h7" path="res://script/quiz_overlay.gd" id="1_lxaf5"]
-[ext_resource type="FontFile" uid="uid://cccmj080pymaq" path="res://Font/Minecraft.ttf" id="2_lxaf5"]
+[ext_resource type="FontFile" uid="uid://boqc61xuaeyv6" path="res://Font/PixelPurl.ttf" id="2_lxaf5"]
 
 [node name="QuizOverlay" type="CanvasLayer" unique_id=1082558625]
 follow_viewport_enabled = true

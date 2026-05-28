@@ -19,7 +19,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		DialogueManager.call_deferred("start_dialog", DIALOG_TEXTS, "Nusan: ")
 		sudah_terhubung = true
 		DialogueManager.dialog_selesai.connect(_on_dialog_selesai)
-		DialogueManager.start_dialog(DIALOG_TEXTS)
+		DialogueManager.start_dialog(DIALOG_TEXTS, "Nusan:")
 		
 	if not DialogueManager.dialog_selesai.is_connected(_on_dialog_selesai):
 		DialogueManager.dialog_selesai.connect(_on_dialog_selesai)

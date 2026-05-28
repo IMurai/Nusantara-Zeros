@@ -3,7 +3,7 @@ extends Node2D
 const DIALOG_TEXTS = [
 	"Tara, siswa SMA kelas 10, mendapat tugas dari guru sejarahnya.",
 	"Mengunjungi Museum Sangiran dan mempelajari kehidupan manusia 
-	\nzaman praaksara terutama  zaman paleozoikum secara langsung.",
+	\ndi zaman praaksara terutama  zaman paleozoikum secara langsung.",
 	"Dengan malas, Tara berangkat sendirian pagi itu..."
 ]
 

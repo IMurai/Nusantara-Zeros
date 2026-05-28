@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cq3stof644rs2" path="res://cutscene_dua.gd" id="1_mtap7"]
 [ext_resource type="FontFile" uid="uid://cccmj080pymaq" path="res://Font/Minecraft.ttf" id="2_t3xv6"]
+[ext_resource type="FontFile" uid="uid://boqc61xuaeyv6" path="res://Font/PixelPurl.ttf" id="3_t3xv6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xfmdw"]
 bg_color = Color(0, 0, 0, 0.92156863)
@@ -42,7 +43,7 @@ offset_bottom = 39.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/line_spacing = 1
-theme_override_fonts/font = ExtResource("2_t3xv6")
+theme_override_fonts/font = ExtResource("3_t3xv6")
 theme_override_font_sizes/font_size = 12
 horizontal_alignment = 1
 vertical_alignment = 1

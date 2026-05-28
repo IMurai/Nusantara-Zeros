@@ -8,7 +8,7 @@ signal dialog_selesai
 var textbox_container
 var label
 var start_symbol
-var _speaker_name = "NPC: "
+var _speaker_name
 
 enum State { READY, READING, FINISHED }
 
@@ -19,7 +19,7 @@ var is_active = false  # ← tambah ini
 func _ready():
 	pass
 
-func start_dialog(texts: Array, speaker_name: String = "NPC: "):
+func start_dialog(texts: Array, speaker_name: String):
 	if is_active:
 		return
 	var scene_root = get_tree().current_scene
