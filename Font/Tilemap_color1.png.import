@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3jn4l1p3rs86"
-path="res://.godot/imported/title.png-95468a7c040c7b51cefd7ec199d63d33.ctex"
+uid="uid://dvxhf6mqbuolb"
+path="res://.godot/imported/Tilemap_color1.png-6edde9548292c2e4d31bfb5b072a96fe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arts/title.png"
-dest_files=["res://.godot/imported/title.png-95468a7c040c7b51cefd7ec199d63d33.ctex"]
+source_file="res://Font/Tilemap_color1.png"
+dest_files=["res://.godot/imported/Tilemap_color1.png-6edde9548292c2e4d31bfb5b072a96fe.ctex"]
 
 [params]
 

@@ -17,7 +17,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		DialogueManager.call_deferred("start_dialog", DIALOG_TEXTS, "Elba: ")
 		sudah_terhubung = true
-		DialogueManager.dialog_selesai.connect(_on_dialog_selesai)
+		#DialogueManager.dialog_selesai.connect(_on_dialog_selesai)
 		DialogueManager.start_dialog(DIALOG_TEXTS, "Rohg")
 		
 	if not DialogueManager.dialog_selesai.is_connected(_on_dialog_selesai):

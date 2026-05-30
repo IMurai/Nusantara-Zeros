@@ -378,6 +378,24 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 2
 sources/1 = SubResource("TileSetAtlasSource_ppp3w")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qmrc1"]
+texture = ExtResource("2_rv56x")
+1:66/size_in_atlas = Vector2i(1, 2)
+1:66/0 = 0
+2:66/size_in_atlas = Vector2i(1, 2)
+2:66/0 = 0
+0:66/size_in_atlas = Vector2i(1, 2)
+0:66/0 = 0
+0:68/size_in_atlas = Vector2i(1, 2)
+0:68/0 = 0
+1:68/size_in_atlas = Vector2i(1, 2)
+1:68/0 = 0
+2:68/size_in_atlas = Vector2i(1, 2)
+2:68/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ewjp8"]
+sources/0 = SubResource("TileSetAtlasSource_qmrc1")
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qmrc1"]
 size = Vector2(11, 20)
 
@@ -683,13 +701,14 @@ tile_map_data = PackedByteArray("AAAEAAEAAQAMABgAAAAEAAIAAQAMABkAAAAcAAEAAQAKACw
 tile_set = SubResource("TileSet_08tmp")
 
 [node name="object2" type="TileMapLayer" parent="." unique_id=910157408]
+tile_set = SubResource("TileSet_ewjp8")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=765306781]
 collision_mask = 2
 script = ExtResource("3_855hx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1278593277]
-position = Vector2(472, 213)
+position = Vector2(472, 186)
 shape = SubResource("RectangleShape2D_qmrc1")
 
 [node name="player" type="CharacterBody2D" parent="." unique_id=2075448648 groups=["player"]]

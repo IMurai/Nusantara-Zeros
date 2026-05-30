@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqqb4julcsr3x"
-path="res://.godot/imported/WhatsApp_Image_2026-05-24_at_19.09.49-removebg-preview.png-28822459e32bff57fa084d8907e541e5.ctex"
+uid="uid://ciyour7nplies"
+path="res://.godot/imported/interior2.png-da1b3bd84c771a2a89f3c0292e278f9e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arts/WhatsApp_Image_2026-05-24_at_19.09.49-removebg-preview.png"
-dest_files=["res://.godot/imported/WhatsApp_Image_2026-05-24_at_19.09.49-removebg-preview.png-28822459e32bff57fa084d8907e541e5.ctex"]
+source_file="res://arts/objects/museum/interior2.png"
+dest_files=["res://.godot/imported/interior2.png-da1b3bd84c771a2a89f3c0292e278f9e.ctex"]
 
 [params]
 

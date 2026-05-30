@@ -12,17 +12,27 @@ follow_viewport_enabled = true
 script = ExtResource("1_lxaf5")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1132233979]
-visible = false
-offset_left = 48.0
-offset_top = 32.0
-offset_right = 432.0
-offset_bottom = 208.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 6844.0
+offset_bottom = 4190.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.42745098)
 
 [node name="KotakKuis" type="TextureRect" parent="." unique_id=2083938576]
-offset_left = 48.0
-offset_top = 32.0
-offset_right = 432.0
-offset_bottom = 208.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 247.0
+offset_top = -130.0
+offset_right = 631.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 0
 texture = SubResource("AtlasTexture_ojc1f")
 
 [node name="Soal" type="Label" parent="KotakKuis" unique_id=1299813979]
@@ -99,14 +109,6 @@ offset_bottom = 38.0
 theme_override_colors/font_color = Color(1, 0.827451, 0.03529412, 1)
 theme_override_fonts/font = ExtResource("2_lxaf5")
 theme_override_font_sizes/font_size = 16
-
-[node name="d" type="Panel" parent="." unique_id=1266158605]
-visible = false
-offset_left = 48.0
-offset_top = 32.0
-offset_right = 432.0
-offset_bottom = 208.0
-mouse_force_pass_scroll_events = false
 
 [connection signal="pressed" from="KotakKuis/TombolA" to="." method="_on_tombol_a_pressed"]
 [connection signal="pressed" from="KotakKuis/TombolB" to="." method="_on_tombol_b_pressed"]

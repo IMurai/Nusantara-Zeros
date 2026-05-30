@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8w6brijed523"
-path="res://.godot/imported/WhatsApp_Image_2026-05-24_at_19.09.49-removebg-preview.png-0abe5310d02c9c85dee1ea77a6ac234d.ctex"
+uid="uid://ty7usb522ltp"
+path="res://.godot/imported/Tilemap_color1.png-1f8480e99e1caf8b0ca19ecd94f53085.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://WhatsApp_Image_2026-05-24_at_19.09.49-removebg-preview.png"
-dest_files=["res://.godot/imported/WhatsApp_Image_2026-05-24_at_19.09.49-removebg-preview.png-0abe5310d02c9c85dee1ea77a6ac234d.ctex"]
+source_file="res://arts/objects/zaman purba/Tilemap_color1.png"
+dest_files=["res://.godot/imported/Tilemap_color1.png-1f8480e99e1caf8b0ca19ecd94f53085.ctex"]
 
 [params]
 
