@@ -6,7 +6,9 @@ var sudah_terhubung = false
 const DIALOG_TEXTS = [
 	"Anak muda dari mana kau berasal, aku tidak kenal baumu.",
 	"Kami hidup dengan cara Nomaden, hidup dari apa yang ada. Berburu, mengumpulkan buah, ikuti sungai. \nTidak lebih, tidak kurang.",
-	"Kau mau tahu lebih banyak tentang zaman kami? Buktikan dulu kau layak menyimpan pengetahuan ini.",
+	"Sebentarr...",
+	"Apakah kamu adalah orang yang ditugaskan untuk mencari fragment ini?",
+	"Jika ya, buktikan apakah kamu layak untuk mendapatkannya."
 ]
 
 func _ready():
