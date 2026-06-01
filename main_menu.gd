@@ -1,14 +1,13 @@
 extends Control
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	$TextureRect.visible = true
+@onready var credits_panel = $"Panel"  # SESUAIKAN path-nya
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
+func _ready():
+	credits_panel.visible = false
 
 func _on_credits_pressed() -> void:
-	pass # Replace with function body.
+	credits_panel.visible = true
+
+func _on_close_pressed() -> void:
+	credits_panel.visible = false

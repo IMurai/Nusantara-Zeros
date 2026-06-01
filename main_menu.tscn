@@ -15,7 +15,6 @@
 [ext_resource type="Script" uid="uid://c23t2y0rtkjea" path="res://exit_button.gd" id="10_8u0te"]
 [ext_resource type="Texture2D" uid="uid://c6oelqiqcbux8" path="res://arts/Button/Main Menu/Credits/CREDITS_NORMAL.png" id="13_oiatc"]
 [ext_resource type="Texture2D" uid="uid://b30yulwyntxje" path="res://arts/Button/Main Menu/Credits/CREDITS_CLICK.png" id="14_mg3m2"]
-[ext_resource type="Script" uid="uid://bsquro0ylfdaj" path="res://script/credits_button.gd" id="14_ojb7r"]
 [ext_resource type="Texture2D" uid="uid://ca5wiqxgnceh" path="res://arts/Button/Main Menu/Credits/CREDITS_HOVER.png" id="15_ojb7r"]
 [ext_resource type="Script" uid="uid://crmdbl8fj27lm" path="res://script/start_button.gd" id="16_g8g3n"]
 [ext_resource type="Texture2D" uid="uid://u08waqysfvhk" path="res://arts/tilesets/BACKGROUND.png" id="19_ojb7r"]
@@ -1305,6 +1304,8 @@ texture = ExtResource("4_glbon")
 [sub_resource type="TileSet" id="TileSet_imjy1"]
 sources/0 = SubResource("TileSetAtlasSource_m2y5l")
 
+[sub_resource type="GDScript" id="GDScript_mg3m2"]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_0k4wn"]
 atlas = ExtResource("6_cm266")
 
@@ -1354,10 +1355,11 @@ offset_top = 180.0
 offset_right = 363.0
 offset_bottom = 242.0
 scale = Vector2(0.6, 0.6)
+action_mode = 0
 texture_normal = ExtResource("13_oiatc")
 texture_pressed = ExtResource("14_mg3m2")
 texture_hover = ExtResource("15_ojb7r")
-script = ExtResource("14_ojb7r")
+script = SubResource("GDScript_mg3m2")
 
 [node name="START" type="TextureButton" parent="." unique_id=1017148127]
 layout_mode = 0
@@ -1379,44 +1381,46 @@ offset_right = 448.0
 offset_bottom = 181.0
 texture = SubResource("AtlasTexture_0k4wn")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=853300128]
-visible = false
+[node name="Panel" type="Panel" parent="." unique_id=108385128]
+layout_mode = 0
+offset_right = 512.0
+offset_bottom = 258.0
+
+[node name="TextureRect" type="TextureRect" parent="Panel" unique_id=853300128]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -799.0
-offset_top = 19.0
-offset_right = -687.0
-offset_bottom = 194.0
+offset_left = -79.5
+offset_top = 51.0
+offset_right = 32.5
+offset_bottom = 226.0
 grow_horizontal = 2
 texture = ExtResource("19_ojb7r")
 
-[node name="Label" type="Label" parent="." unique_id=2104899863]
-visible = false
+[node name="Label" type="Label" parent="Panel" unique_id=2104899863]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -779.5
-offset_top = 31.0
-offset_right = -706.5
-offset_bottom = 54.0
+offset_left = -60.0
+offset_top = 63.0
+offset_right = 13.0
+offset_bottom = 86.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 0.827451, 0.03529412, 1)
 theme_override_fonts/font = ExtResource("20_e5qqf")
 text = "> CREADITS <"
 
-[node name="Label4" type="Label" parent="." unique_id=374657890]
-visible = false
+[node name="Label4" type="Label" parent="Panel" unique_id=374657890]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -765.5
-offset_top = 140.0
-offset_right = -720.5
-offset_bottom = 163.0
+offset_left = -46.0
+offset_top = 172.0
+offset_right = -1.0
+offset_bottom = 195.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 0.827451, 0.03529412, 1)
 theme_override_fonts/font = ExtResource("20_e5qqf")
@@ -1424,7 +1428,7 @@ theme_override_font_sizes/font_size = 12
 text = "Third Party"
 horizontal_alignment = 1
 
-[node name="Label" type="Label" parent="Label4" unique_id=2132367132]
+[node name="Label" type="Label" parent="Panel/Label4" unique_id=2132367132]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -1440,16 +1444,15 @@ craftpix.net"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label3" type="Label" parent="." unique_id=290733142]
-visible = false
+[node name="Label3" type="Label" parent="Panel" unique_id=290733142]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -764.5
-offset_top = 98.0
-offset_right = -721.5
-offset_bottom = 121.0
+offset_left = -45.0
+offset_top = 130.0
+offset_right = -2.0
+offset_bottom = 153.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 0.827451, 0.03529412, 1)
 theme_override_fonts/font = ExtResource("20_e5qqf")
@@ -1457,7 +1460,7 @@ theme_override_font_sizes/font_size = 12
 text = "Software"
 horizontal_alignment = 1
 
-[node name="Label" type="Label" parent="Label3" unique_id=1984585682]
+[node name="Label" type="Label" parent="Panel/Label3" unique_id=1984585682]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -1473,16 +1476,15 @@ LibreSprite"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="." unique_id=858523079]
-visible = false
+[node name="Label2" type="Label" parent="Panel" unique_id=858523079]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -764.5
-offset_top = 56.0
-offset_right = -721.5
-offset_bottom = 79.0
+offset_left = -45.0
+offset_top = 88.0
+offset_right = -2.0
+offset_bottom = 111.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 0.827451, 0.03529412, 1)
 theme_override_fonts/font = ExtResource("20_e5qqf")
@@ -1490,7 +1492,7 @@ theme_override_font_sizes/font_size = 12
 text = "Developers"
 horizontal_alignment = 1
 
-[node name="Label" type="Label" parent="Label2" unique_id=1513957272]
+[node name="Label" type="Label" parent="Panel/Label2" unique_id=1513957272]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -1506,6 +1508,20 @@ Fathian"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Close" type="Button" parent="Panel" unique_id=370878255]
+layout_mode = 0
+offset_left = 211.0
+offset_top = 203.0
+offset_right = 253.0
+offset_bottom = 226.0
+theme_override_colors/font_color = Color(1.0039216, 0.047438186, 0.08679967, 1)
+theme_override_colors/font_hover_color = Color(1.0039216, 0.063182786, 0.0079132905, 1)
+theme_override_fonts/font = ExtResource("20_e5qqf")
+theme_override_font_sizes/font_size = 8
+text = "Close"
+flat = true
+
 [connection signal="pressed" from="EXIT" to="EXIT" method="_on_pressed"]
 [connection signal="pressed" from="CREDITS" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="START" to="START" method="_on_pressed"]
+[connection signal="pressed" from="Panel/Close" to="." method="_on_close_pressed"]
