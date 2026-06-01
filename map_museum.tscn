@@ -10,8 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://cl4fij0vqfyrk" path="res://arts/objects/museum/bone/Interior_objects.png" id="6_0dcx7"]
 [ext_resource type="Texture2D" uid="uid://d2l27y54anqdh" path="res://arts/characters/player.png" id="6_kuxti"]
 [ext_resource type="Texture2D" uid="uid://bfgxom54wp2up" path="res://arts/objects/museum/bone/Objects.png" id="7_rvnal"]
-[ext_resource type="FontFile" uid="uid://boqc61xuaeyv6" path="res://Font/PixelPurl.ttf" id="11_0dcx7"]
-[ext_resource type="Script" uid="uid://v6b63dxoywhq" path="res://script/Museum/tulang_dino.gd" id="12_rvnal"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dqoon"]
 texture = ExtResource("3_k4muu")
@@ -452,9 +450,6 @@ sources/9 = SubResource("TileSetAtlasSource_vxwnq")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qmrc1"]
 size = Vector2(11, 20)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_opcw7"]
-size = Vector2(185, 103)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_e352r"]
 atlas = ExtResource("6_kuxti")
 region = Rect2(0, 96, 48, 48)
@@ -766,30 +761,6 @@ script = ExtResource("3_855hx")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1278593277]
 position = Vector2(472, 186)
 shape = SubResource("RectangleShape2D_qmrc1")
-
-[node name="Panel" type="Panel" parent="." unique_id=418897220]
-visible = false
-offset_left = 96.0
-offset_top = 121.0
-offset_right = 148.0
-offset_bottom = 158.0
-
-[node name="Label" type="Label" parent="Panel" unique_id=1679005001]
-layout_mode = 0
-offset_left = 3.0
-offset_top = 11.0
-offset_right = 49.0
-offset_bottom = 22.0
-theme_override_fonts/font = ExtResource("11_0dcx7")
-theme_override_font_sizes/font_size = 12
-text = "Tulang Dino"
-
-[node name="Tulang Dino" type="Area2D" parent="." unique_id=1012109337]
-script = ExtResource("12_rvnal")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tulang Dino" unique_id=535885278]
-position = Vector2(120.5, 147.5)
-shape = SubResource("RectangleShape2D_opcw7")
 
 [node name="player" type="CharacterBody2D" parent="." unique_id=2075448648 groups=["player"]]
 z_index = 1
