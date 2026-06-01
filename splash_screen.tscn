@@ -1,3 +1,68 @@
 [gd_scene format=3 uid="uid://b78m35ln6d3an"]
 
+[ext_resource type="Script" uid="uid://d0d2mh6n112fn" path="res://script/splash_screen.gd" id="1_el3v4"]
+[ext_resource type="Texture2D" uid="uid://c65sauemmo0uq" path="res://arts/TITLE/peak_title.png" id="2_arguk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_spqux"]
+atlas = ExtResource("2_arguk")
+
+[sub_resource type="Animation" id="Animation_ty3ja"]
+resource_name = "FADE IN OUT"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.2, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0.007843138, 0.007843138, 0.007843138, 0), Color(0.011764706, 0.003921569, 0.03529412, 0), Color(0.0071415612, 0.0071415612, 0.0071415603, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_el3v4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.0071415612, 0.0071415612, 0.0071415603, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_arguk"]
+_data = {
+&"FADE IN OUT": SubResource("Animation_ty3ja"),
+&"RESET": SubResource("Animation_el3v4")
+}
+
 [node name="Node2D" type="Node2D" unique_id=22045100]
+script = ExtResource("1_el3v4")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2141164709]
+offset_right = 1943.0
+offset_bottom = 1338.0
+size_flags_horizontal = 4
+color = Color(0.0071415612, 0.0071415612, 0.0071415603, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1159549213]
+offset_right = 479.0
+offset_bottom = 241.0
+texture = SubResource("AtlasTexture_spqux")
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1236413631]
+offset_right = 1943.0
+offset_bottom = 1338.0
+size_flags_horizontal = 4
+color = Color(0.0071415612, 0.0071415612, 0.0071415603, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=346615082]
+auto_translate_mode = 1
+libraries/ = SubResource("AnimationLibrary_arguk")
