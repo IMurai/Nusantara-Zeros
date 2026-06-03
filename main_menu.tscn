@@ -1384,7 +1384,7 @@ texture = SubResource("AtlasTexture_0k4wn")
 [node name="Panel" type="Panel" parent="." unique_id=108385128]
 layout_mode = 0
 offset_right = 512.0
-offset_bottom = 258.0
+offset_bottom = 318.0
 
 [node name="TextureRect" type="TextureRect" parent="Panel" unique_id=853300128]
 layout_mode = 1

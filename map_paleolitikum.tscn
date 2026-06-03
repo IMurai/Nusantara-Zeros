@@ -1902,7 +1902,7 @@ position = Vector2(199.5, 322.5)
 shape = SubResource("RectangleShape2D_j6kj6")
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=523422750]
-position = Vector2(200, 323)
+position = Vector2(204, 314)
 process_callback = 0
 limit_smoothed = true
 position_smoothing_enabled = true

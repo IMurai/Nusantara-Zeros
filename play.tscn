@@ -13,6 +13,8 @@ script = ExtResource("1_yuxfv")
 [node name="Textboxcontainer" type="CanvasLayer" parent="." unique_id=956780436]
 
 [node name="PanelDialog" type="Panel" parent="Textboxcontainer" unique_id=1416609102]
+anchors_preset = -1
+anchor_bottom = 0.0615727
 offset_right = 496.0
 offset_bottom = 256.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_j5m8q")

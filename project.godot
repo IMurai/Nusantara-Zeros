@@ -29,6 +29,7 @@ QuizManager="*uid://ds11gbpf23sl6"
 
 window/size/viewport_width=1952
 window/size/viewport_height=1348
+window/size/mode=3
 window/stretch/scale=4.0
 window/main_scene="uid://cvd3udd5ihxaa"
 
